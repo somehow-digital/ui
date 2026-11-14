@@ -4,7 +4,7 @@ import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
 const props = withDefaults(defineProps<{ animated?: boolean }>(), { animated: false });
 
 // Mirrors the bars of the somehow.digital website logo.
-const bars = ['self-end h-80%', 'h-full', 'self-start h-80%', 'h-full', 'h-60%'];
+const barClasses = ['self-end h-80%', 'h-full', 'self-start h-80%', 'h-full', 'h-60%'];
 
 const base = useTemplateRef<HTMLElement>('base');
 const mark = useTemplateRef<HTMLElement>('mark');
@@ -65,7 +65,7 @@ onUnmounted(() => {
 		</span>
 
 		<span ref="mark" class="flex flex-none flex-row gap-[0.05em] aspect-square items-center" aria-hidden="true">
-			<span v-for="(bar, index) in bars" :key="index" ref="bars" class="block w-[0.3125em] origin-bottom rounded-[0.025em] bg-current" :class="bar" />
+			<span v-for="(bar, index) in barClasses" :key="index" ref="bars" class="block w-[0.3125em] origin-bottom rounded-[0.025em] bg-current" :class="bar" />
 		</span>
 	</span>
 </template>
