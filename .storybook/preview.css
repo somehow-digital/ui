@@ -1,0 +1,20 @@
+body,
+.docs-story {
+	padding: 1rem;
+	color: var(--colors-gray-900);
+	background-color: var(--colors-gray-100);
+	cursor: default;
+}
+
+.dark body,
+.dark .docs-story {
+	color: var(--colors-gray-100);
+	background-color: #0f0f0f;
+}
+
+@media (min-width: 600px) {
+	body,
+	.docs-story {
+		padding: 2.5vw;
+	}
+}

@@ -1,0 +1,46 @@
+import vue from '@vitejs/plugin-vue';
+import { resolve } from 'node:path';
+import process from 'node:process';
+import { fileURLToPath, URL } from 'node:url';
+import unocss from 'unocss/vite';
+import dts from 'unplugin-dts/vite';
+import { defineConfig } from 'vite-plus';
+
+export default defineConfig({
+	publicDir: false,
+	plugins: [
+		vue(),
+		unocss(),
+		!process.env.VITEST && !process.env.STORYBOOK && dts({ bundleTypes: true, tsconfigPath: './tsconfig.app.json', exclude: ['src/**/*.stories.ts'] }),
+	].filter(Boolean),
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
+		},
+	},
+	build: {
+		emptyOutDir: true,
+		lib: {
+			entry: {
+				ui: resolve(import.meta.dirname, './src/index.ts'),
+				preset: resolve(import.meta.dirname, './src/unocss.ts'),
+			},
+			formats: ['es'],
+		},
+		rolldownOptions: {
+			external: [
+				'vue',
+				'unocss',
+				'@somehow-digital/unocss-preset',
+				'reka-ui',
+				'motion',
+			],
+		},
+	},
+	staged: {
+		'**/*.*': [
+			'eslint --fix',
+			'cspell --no-progress --no-summary --no-must-find-files',
+		],
+	},
+});
