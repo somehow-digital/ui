@@ -2,7 +2,7 @@
 	"name": "@somehow-digital/ui",
 	"type": "module",
 	"version": "1.0.0",
-	"packageManager": "pnpm@12.18.0",
+	"packageManager": "pnpm@12.21.0",
 	"description": "Design system for somehow.digital projects.",
 	"license": "MIT",
 	"repository": {
