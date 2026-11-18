@@ -9,4 +9,4 @@ trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 10080
 verifyDepsBeforeRun: install
 overrides:
-  vite@*: npm:@voidzero-dev/vite-plus-core@1.6.0
+  vite@*: npm:@voidzero-dev/vite-plus-core@8.3.8000
