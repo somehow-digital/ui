@@ -12,3 +12,6 @@ trustPolicyExclude:
 verifyDepsBeforeRun: install
 overrides:
   vite@*: npm:@voidzero-dev/vite-plus-core@8.3.8000
+registries:
+  https://registry.vlt.io/upstream/npm/:
+    scopes: ['@']
