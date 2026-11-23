@@ -4,7 +4,13 @@ import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
 const props = withDefaults(defineProps<{ animated?: boolean }>(), { animated: false });
 
 // Mirrors the bars of the somehow.digital website logo.
-const barClasses = ['self-end h-80%', 'h-full', 'self-start h-80%', 'h-full', 'h-60%'];
+const barClasses = [
+	'self-end h-80%',
+	'h-full',
+	'self-start h-80%',
+	'h-full',
+	'h-60%',
+];
 
 const base = useTemplateRef<HTMLElement>('base');
 const mark = useTemplateRef<HTMLElement>('mark');
@@ -37,7 +43,13 @@ onMounted(async () => {
 			throw new Error('logo elements missing');
 		}
 
-		controls = animation({ bars: barElements.value, base: base.value, dot: dot.value, mark: mark.value, type: [first.value, second.value] });
+		controls = animation({
+			bars: barElements.value,
+			base: base.value,
+			dot: dot.value,
+			mark: mark.value,
+			type: [first.value, second.value],
+		});
 	}
 	catch (error) {
 		console.error('logo animation failed', error);

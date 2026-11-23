@@ -13,7 +13,9 @@ const slides = [
 const meta = {
 	title: 'Media/Gallery',
 	component: Gallery,
-	decorators: [() => ({ template: '<div style="width: min(40rem, 90vw)"><story /></div>' })],
+	decorators: [
+		() => ({ template: '<div style="width: min(40rem, 90vw)"><story /></div>' }),
+	],
 	render: args => ({
 		components: { Gallery, Image },
 		setup: () => ({ args, slides }),

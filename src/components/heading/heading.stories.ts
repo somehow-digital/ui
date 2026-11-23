@@ -6,8 +6,14 @@ const meta = {
 	title: 'Common/Heading',
 	component: Heading,
 	argTypes: {
-		level: { control: 'select', options: [1, 2, 3, 4, 5, 6] },
-		size: { control: 'select', options: [undefined, 1, 2, 3, 4, 5, 6] },
+		level: {
+			control: 'select',
+			options: [1, 2, 3, 4, 5, 6],
+		},
+		size: {
+			control: 'select',
+			options: [undefined, 1, 2, 3, 4, 5, 6],
+		},
 		default: { control: 'text' },
 	},
 	args: { default: 'Heading' },

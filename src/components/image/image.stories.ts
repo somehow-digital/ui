@@ -11,7 +11,9 @@ const meta = {
 		width: 1280,
 		height: 800,
 	},
-	decorators: [() => ({ template: '<div style="width: min(40rem, 90vw)"><story /></div>' })],
+	decorators: [
+		() => ({ template: '<div style="width: min(40rem, 90vw)"><story /></div>' }),
+	],
 } satisfies Meta<typeof Image>;
 
 export default meta;

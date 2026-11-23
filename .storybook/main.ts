@@ -16,7 +16,9 @@ const config: StorybookConfig = {
 	},
 	async viteFinal(config: InlineConfig) {
 		return mergeConfig(config, {
-			plugins: [tools()],
+			plugins: [
+				tools(),
+			],
 		});
 	},
 };
