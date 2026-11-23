@@ -12,7 +12,9 @@ defineSlots<{ default: (props: Record<string, never>) => unknown }>();
 
 const tag = computed(() => props.as ?? (props.href ? 'a' : 'button'));
 // `type` only belongs on a real <button>, not on links or an `asChild` target.
-const type = computed(() => (!props.asChild && tag.value === 'button' ? props.type : undefined));
+const type = computed(() => (!props.asChild && tag.value === 'button'
+	? props.type
+	: undefined));
 </script>
 
 <template>

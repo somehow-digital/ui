@@ -5,7 +5,12 @@ import Badge from './badge.vue';
 const meta = {
 	title: 'Common/Badge',
 	component: Badge,
-	argTypes: { variant: { control: 'select', options: ['neutral', 'accent'] } },
+	argTypes: {
+		variant: {
+			control: 'select',
+			options: ['neutral', 'accent'],
+		},
+	},
 	args: { default: 'Pro' },
 	render: args => ({
 		components: { Badge },
@@ -24,4 +29,6 @@ export const NeutralBadge: Story = {
 	},
 };
 
-export const AccentBadge: Story = { args: { variant: 'accent' } };
+export const AccentBadge: Story = {
+	args: { variant: 'accent' },
+};

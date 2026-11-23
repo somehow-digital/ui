@@ -18,7 +18,9 @@ import preset from '@somehow-digital/ui/preset';
 import { defineConfig } from 'unocss';
 
 export default defineConfig({
-	presets: [preset()],
+	presets: [
+		preset()
+	],
 });
 ```
 

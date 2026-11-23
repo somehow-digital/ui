@@ -12,8 +12,10 @@ const edges = /^["'`]+|["'`,;)]+$/g;
 // so every token in the built components goes on the safelist; tokens that match no rule generate nothing.
 function classes() {
 	try {
-		const code = readFileSync(`${import.meta.dirname}/ui.js`, 'utf-8');
-		return [...new Set(code.split(whitespace).map(token => token.replace(edges, '')).filter(Boolean))];
+		const code = readFileSync(new URL('ui.js', import.meta.url), 'utf-8');
+		return [
+			...new Set(code.split(whitespace).map(token => token.replace(edges, '')).filter(Boolean)),
+		];
 	}
 	catch {
 		return [];
@@ -24,7 +26,9 @@ function classes() {
 export default function preset() {
 	return {
 		name: 'somehow-digital-ui',
-		presets: [base()],
+		presets: [
+			base(),
+		],
 		outputToCssLayers: true,
 		safelist: classes(),
 	};

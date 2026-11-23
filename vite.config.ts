@@ -11,7 +11,11 @@ export default defineConfig({
 	plugins: [
 		vue(),
 		unocss(),
-		!process.env.VITEST && !process.env.STORYBOOK && dts({ bundleTypes: true, tsconfigPath: './tsconfig.app.json', exclude: ['src/**/*.stories.ts'] }),
+		!process.env.VITEST && !process.env.STORYBOOK && dts({
+			bundleTypes: true,
+			tsconfigPath: './tsconfig.app.json',
+			exclude: ['src/**/*.stories.ts'],
+		}),
 	].filter(Boolean),
 	resolve: {
 		alias: {
